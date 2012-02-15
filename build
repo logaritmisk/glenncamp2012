@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+cd web
+
+drush -y make ../project.make
+
+if pushd profiles/drupalse; then
+  drush -y make --no-core --contrib-destination=. drupalse.make
+
+  popd
+fi

@@ -1,11 +1,9 @@
-log/*
-!log/README.txt
-tmp/*
-!tmp/README.txt
-web/sites/*/backup
-web/sites/*/settings.php
-web/sites/*/files/*
-!web/sites/*/files/README.txt
+/web/*
+!/web/profiles
+
+/web/profiles/*
+!/web/profiles/drupalse
+
 .DS_Store
 nbproject
 ._*

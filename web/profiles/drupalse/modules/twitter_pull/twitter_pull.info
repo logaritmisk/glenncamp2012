@@ -1,0 +1,11 @@
+name = Twitter Pull
+description = Pull Info from Twitter and Create Contextual Insets
+package = Other
+core = 6.x
+
+; Information added by drupal.org packaging script on 2011-03-17
+version = "6.x-1.x-dev"
+core = "6.x"
+project = "twitter_pull"
+datestamp = "1300364193"
+

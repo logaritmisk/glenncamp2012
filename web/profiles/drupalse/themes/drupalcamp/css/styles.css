@@ -1,0 +1,723 @@
+/**
+ * Style for DrupalCamp Fall 2011
+*/
+
+/**
+* Site layout style and graphics for wrappers, header etc
+*/
+body {
+  margin: 0;
+  background: #e9eae3 url(../images/bg-header.jpg) top center repeat-x;
+}
+
+#front-sponsors {
+  overflow:hidden;
+}
+
+#page {
+  background: url("../images/bg-triangles.png") no-repeat scroll 0 515px transparent;
+  padding:0px 10px 10px 10px;
+  min-height: 820px;
+}
+
+.site-main {
+  background: url(../images/bg-white.png) 0px -10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding-bottom: 2em;
+}
+
+.site-header {
+  margin: 50px 0;
+}
+
+#mission {
+  background: url(../images/bg-mission.png) top left no-repeat;
+  padding: 90px 120px 0 30px;
+  width: 422px; /* 572 - 120 - 30 */
+  height: 60px; /* 150 - 90 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #FFF;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.drupalcamp-page-1 .page-highlighted .panel-pane {
+  margin-bottom: 1em;
+}
+
+/* Padding and background for individual panes */ 
+.drupalcamp-user-page .pane-content,
+.drupalcamp-page-1 .page-navigation .panel-pane,
+.drupalcamp-page-1 .page-sidebar-left .panel-pane,
+.drupalcamp-page-1 .page-content .panel-pane,
+.drupalcamp-page-1 .page-highlighted .panel-pane {
+  background:#fff;
+  padding: 20px;
+}
+
+.site-footer .panel-pane {
+  padding:1em 2em;
+  opacity:0.8;
+  font-size:14px;
+  color: #666;
+  background:#fff;
+  margin-top:1em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.site-footer .panel-pane p {
+  margin:0;
+}
+.site-footer .panel-pane a {
+  color:#333;
+}
+
+.page-sidebar-left .panel-pane {
+  border-bottom: 1px solid #e9e9e9;
+  padding-bottom: 1em;
+}
+
+/**
+ * Navigation
+*/
+#navigation li.first {
+  padding-left: 0;
+}
+
+#navigation a {
+  color: #666;
+  text-decoration: none;
+  padding: 8px;
+  line-height: 18px;
+}
+
+#navigation a:hover,
+#navigation a.active,
+#navigation .active-trail a {
+  color: #56A79E;
+  text-decoration:none;
+}
+
+#navigation li {
+  padding: 0 20px;
+  font-size: 18px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#navigation li.first a {
+  padding-left: 35px;
+  background: url(../images/bg-nav-home.png) 0 0 no-repeat;
+}
+
+#navigation li.first a.active,
+#navigation li.first a:hover {
+  background-position: 0 -40px;
+}
+
+#navigation ul {
+  padding: 35px 0 25px 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/**
+ * Secondary menu
+*/
+.site-service .menu-name-secondary-links {
+  float:right;
+  background-image: url('../images/bg-black.png');
+  padding:4px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.site-service .menu-name-secondary-links ul {
+  margin:0;
+  padding:0;
+}
+
+.site-service .menu-name-secondary-links ul li {
+  list-style-type:none;
+  list-style-image:none; 
+  float:left;
+  padding:0 10px;
+  margin:0;
+}
+
+.site-service .menu-name-secondary-links ul li a,
+.site-service .menu-name-secondary-links ul li a:link,
+.site-service .menu-name-secondary-links ul li a:visited{
+  font-size:14px;
+  line-height:16px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#fff;
+}
+.site-service .menu-name-secondary-links ul li a:hover,
+.site-service .menu-name-secondary-links ul li a.active {
+  color:#fff;  
+}
+
+/**
+ * Tabs
+*/
+ul.tabs.primary {
+  margin:5px 5px 5px 0;
+}
+
+.pane-pane-messages .tabs ul.primary a {
+  color: #242021;
+  padding: 5px 10px;
+  margin:0;
+  border-color:#fff;
+  border-style:solid;
+}
+
+.pane-pane-messages .tabs ul {
+  border: 0 none;
+  /*margin-bottom: 10px;*/
+  padding: 0;
+}
+
+/**
+ * Messages styling
+*/
+div.messages {
+  border: 7px solid;
+  margin: 10px 0;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+div.messages.message {
+  background: #CCC;
+  border-color: #777
+}
+
+div.messages.status {
+  background: #CFC;
+  border-color: #7D7;
+}
+
+div.messages.warning {
+  background: #FFD;
+  border-color: #F0C020;
+}
+
+div.messages.error {
+  background: #FCC;
+  border-color: #D77;
+}
+
+/**
+ * Front page specific
+*/
+#front-sponsors .sponsor {  
+  margin-right: 7px;
+}
+
+#front-sponsors td {
+  height: 40px;
+  text-align: center;
+  width: 200px;
+}
+
+#front-sponsors td img {
+  vertical-align: middle;
+}
+
+#front-sponsors h2.pane-title {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal;
+  margin-left: -5px;
+  margin-top: -10px;
+}
+/**
+ * Twitter
+*/
+div.tweets-pulled-listing a {
+  color: #55A69E;
+}
+
+.twitter-pane h2.pane-title {
+  background-image: url("../images/twitter-bird.png");
+  background-position: right 2px;
+  background-repeat: no-repeat;
+  font-size: 20.6px;  
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light Italic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  height: 59px;
+  margin-bottom: 0;
+  padding: 10px 10px 0 0;
+}
+
+div.tweets-pulled-listing div.tweet-divider {
+  border:0;
+  margin-bottom: 15px;
+}
+
+div.tweets-pulled-listing .tweet-time a {
+  color:#71716f;
+  font-size:10px;
+}
+
+div.tweets-pulled-listing .tweet-text {
+
+}
+
+div.tweets-pulled-listing .tweet-author {
+  position:absolute;
+  bottom: 4px;
+  left:47px;
+}
+
+div.tweets-pulled-listing  .tweet-photo-wrapper {
+  overflow: hidden;
+  position:relative;
+}
+
+div.tweets-pulled-listing ul {
+  padding:0;
+  margin:0;
+}
+
+.sponsor-page td {
+  padding: 5px;
+  vertical-align: middle;
+  width: 175px;
+  text-align: center;
+  height:80px;
+}
+
+/**
+ * Table design
+*/
+.drupalcamp-table tr.odd {
+  background-color:#f6fcfa;
+  border-bottom:1px solid #55A69E;
+}
+
+.drupalcamp-table thead th {
+  border-bottom:1px solid #55A69E;
+  padding: 1em;
+}
+
+.drupalcamp-table tr.even {
+  background:none;
+  border-bottom:1px solid #55A69E;
+}
+
+.drupalcamp-table td.odd {
+  border-right:1px solid #55A69E;
+}
+
+.drupalcamp-table td.active {
+  background:none;
+}
+
+.drupalcamp-table td.views-field-title {
+  border-right:1px solid #55A69E;
+}
+
+.drupalcamp-table td.even {
+  border-right:1px solid #55A69E;
+}
+
+.drupalcamp-table td.last {
+  border-right:none;
+}
+
+.drupalcamp-table td {
+  padding: 1em;
+  vertical-align: middle;
+}
+
+/**
+ * User registration page
+ */
+fieldset {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin:10px 0;
+  background-color: #EEE;
+  padding: 10px;
+}
+html.js fieldset.collapsed { /* Overriding core. */
+  margin: 10px 0;
+}
+fieldset legend {
+  font-weight:bold;
+  background-color: #EEE;
+  padding: 2px 6px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/**
+ * Input fields, submit buttons
+*/
+input,
+textarea {
+  border:2px solid #55A69E;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 4px;
+  padding:5px 0;
+}
+
+#edit-picture-upload-register {
+  border:none;
+}
+
+input.form-text,
+textarea {
+  -moz-box-shadow: inset 0 0 4px #f5f6f8;
+  -webkit-box-shadow: inset 0 0 4px#f5f6f8;
+  box-shadow: inner 0 0 4px #f5f6f8;
+}
+
+input.form-submit {
+  background-color:#9b9798;
+  border-color: #9b9798;
+  color:#fff;
+}
+
+input.form-submit:hover {
+  background-color:#55A69E;
+  border-color: #55A69E;
+  color:#fff;
+}
+
+#user-register input {
+  width:400px;
+}
+
+#user-register fieldset {
+  padding: 0;
+}
+
+#user-register label,
+#user-register fieldset legend {
+  color:'#323232';
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight:500;
+  padding-bottom: 5px;
+}
+
+#user-register fieldset legend {
+  padding: 2px 10px;
+}
+
+#user-register .description {
+  color:'#323232';
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight:300;
+}
+
+#user-register #edit-name-wrapper,
+#user-register #edit-mail-wrapper,
+#user-register #edit-pass-wrapper,
+#user-register #edit-profile-first-wrapper,
+#user-register #edit-profile-last-wrapper,
+#user-register #edit-profile-org-wrapper,
+#user-register #edit-profile-job-title-wrapper,
+#user-register #edit-profile-interests-wrapper,
+#user-register #edit-picture-upload-register-wrapper {
+  float:left;
+  width:400px;
+  margin:10px 10px 10px 20px;
+}
+
+#user-register #edit-pass-wrapper {
+  margin:-30px 10px 10px 20px;
+}
+
+#user-register #edit-profile-interests-wrapper {
+  margin:-30px 10px 10px 20px;
+}
+
+#user-register #edit-profile-interests-wrapper .description {
+  width:400px;
+}
+
+#user-register  #edit-profile-interests {
+ resize:none;
+ width:400px;
+}
+
+#user-register #edit-submit,
+#user-login  #edit-submit,
+#user-pass #edit-submit {
+  width:200px;
+  margin:0;
+  font-size: 16px;
+}
+
+/**
+ * Input fields, submit buttons
+*/
+input,
+textarea {
+  border:1px solid #55A69E;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 4px;
+  padding:5px;
+}
+
+input.form-text,
+textarea {
+  -moz-box-shadow: inset 0 0 4px #f5f6f8;
+  -webkit-box-shadow: inset 0 0 4px#f5f6f8;
+  box-shadow: inner 0 0 4px #f5f6f8;
+}
+
+input.form-submit {
+  background-color:#9b9798;
+  border-color: #9b9798;
+  color:#ffffff;
+}
+
+html.js input.form-autocomplete {
+  background-position: 100% 8px;
+}
+
+table.tabledrag-processed tr {
+  background:none;
+}
+
+thead th {
+  border-bottom: 3px solid transparent;
+}
+
+/**
+ * User login pane
+ */
+.pane-user-0 input.form-text{
+  padding:8px 8px 12px 8px;
+}
+
+.pane-user-0 .form-required {
+  display:none;
+}
+
+.pane-user-0 div#edit-name-wrapper,
+.pane-user-0 div#edit-pass-wrapper {
+  position:relative;
+  text-align:left;
+  margin:5px 0px;
+}
+
+.pane-user-0 div#edit-name-wrapper input,
+.pane-user-0 div#edit-pass-wrapper input {
+  width:150px;
+}
+
+.pane-user-0 div#edit-pass-wrapper {
+  width:150px;
+  float:left;  
+}
+
+.pane-user-0 input#edit-submit {
+  float:left;
+  margin-top:6px;
+  margin-bottom: 1em;
+  margin-left: 28px;
+  padding:9px 12px;
+}
+
+.pane-user-0 div.item-list {
+  clear:both;
+  text-align: left;
+  overflow: hidden;
+}
+
+.pane-user-0 div.item-list ul li {
+  list-style: none;
+  margin:0;
+  float:left;
+}
+
+.pane-user-0 div.item-list ul li.first {
+  margin-right:5px;
+}
+
+.pane-user-0 div.item-list ul li a {
+  font-size:12px;
+  color:#71716F;
+}
+
+
+.pane-user-0 div#edit-pass-wrapper label,
+.pane-user-0 div#edit-name-wrapper label { 
+  position:absolute; top:9px; left:12px;
+  font-size:13px;
+  font-weight:normal;
+  font-style: italic;
+  color:#676767;
+}
+
+/**
+ * User register button
+ */
+ #boxes-box-drupalse_registerpromo .register {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light Italic", "Helvetica Neue", Helvetica, Arial, sans-serif;  
+  border-radius: 7px 7px 7px 7px;
+  color: #55A69E;
+  display: block;
+  font-size: 17.6px;
+  font-style: italic;
+  font-weight: 300;
+  margin: 10px auto 0;
+  padding: 6px;
+  text-align: center;
+  width: 94%;
+}
+
+/**
+ * Menu blocks
+ */
+ .pane-menu-block-1 ul,
+ .pane-menu-block-2 ul {
+   margin-left:0;
+   
+}
+
+.pane-menu-block-1 ul li a,
+.pane-menu-block-2 ul li a {
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pane-menu-block-1 ul li,
+.pane-menu-block-2 ul li {
+  list-style: none;
+  margin:0;
+  padding-left:0;
+}
+
+/**
+ * Override register promo TODO move chnuk
+ */
+#boxes-box-drupalse_registerpromo a.register,
+#boxes-box-drupalse_registerpromo a.register:link,
+#boxes-box-drupalse_registerpromo a.register:visited {
+  background-color:#55A69E;
+  border-color: #55A69E;
+  color:#fff;
+  width:220px;
+  margin:0px;
+  padding:14px 10px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  margin:10px 0 0 0;
+}
+
+#boxes-box-drupalse_registerpromo a.register:hover {
+  background-color:#9b9798;
+  border-color: #9b9798;
+}
+
+
+/**
+ * Fix for table on community that is to wide
+ */
+.view-attendees .views-field-name {
+  max-width:120px;
+  word-wrap: break-word;
+}
+
+/**
+ * News styling
+ */
+.news-item {
+  border-bottom: 1px solid #E9E9E9;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.news-item span.date {
+  font-style:italic;
+  color: #71716F;
+  font-size: 12px;
+}
+
+
+html#jquery_ui_dialog .site-service,
+html#jquery_ui_dialog .site-header,
+html#jquery_ui_dialog .site-footer,
+html#jquery_ui_dialog .site-main #navigation
+{
+  display:none;
+}
+
+html#jquery_ui_dialog .site-main {
+  width:auto;
+}
+
+html#jquery_ui_dialog .container-14 {
+  width:auto;
+}
+
+html#jquery_ui_dialog body {
+  min-width:0;
+}
+
+html#jquery_ui_dialog #image_preview {
+  float:left;
+}
+
+.view-awards-nominated .node-item {
+  margin-bottom:1em;
+  clear:both;
+  border-bottom:1px solid #55A69E;
+  padding-bottom:1em;
+  overflow:hidden;
+}
+
+.left {
+  float:left;
+}
+
+.view-awards-nominated .node-item .image {
+  margin-right:1em;
+  margin-bottom:1em;
+}
+
+.view-awards-nominated .view-content h2.title {
+  text-align:center;
+  margin-bottom: 2.5em;
+}
+
+.view-awards-nominated .view-content h3.title {
+  margin-bottom:0.7em;
+}
+
+.session-calendar th {
+  text-align:center;
+}
+
+.drupalcamp-table td.session {
+}

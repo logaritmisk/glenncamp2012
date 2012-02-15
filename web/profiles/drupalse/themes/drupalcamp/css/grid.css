@@ -1,0 +1,418 @@
+/*
+	Variable Grid System.
+	Learn more ~ http://www.spry-soft.com/grids/
+	Based on 960 Grid System - http://960.gs/
+
+	Licensed under GPL and MIT.
+*/
+
+/*
+  Forces backgrounds to span full width,
+  even if there is horizontal scrolling.
+  Increase this if your layout is wider.
+
+  Note: IE6 works fine without this fix.
+*/
+
+body {
+  min-width: 1092px;
+}
+
+/* Containers
+----------------------------------------------------------------------------------------------------*/
+.container-14 {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1092px;
+}
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4,
+.grid-5,
+.grid-6,
+.grid-7,
+.grid-8,
+.grid-9,
+.grid-10,
+.grid-11,
+.grid-12,
+.grid-13,
+.grid-14 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+
+.push-1, .pull-1,
+.push-2, .pull-2,
+.push-3, .pull-3,
+.push-4, .pull-4,
+.push-5, .pull-5,
+.push-6, .pull-6,
+.push-7, .pull-7,
+.push-8, .pull-8,
+.push-9, .pull-9,
+.push-10, .pull-10,
+.push-11, .pull-11,
+.push-12, .pull-12,
+.push-13, .pull-13,
+.push-14, .pull-14 {
+	position:relative;
+}
+
+
+/* Grid >> Children (Alpha ~ First, Omega ~ Last)
+----------------------------------------------------------------------------------------------------*/
+
+.alpha {
+	margin-left: 0;
+}
+
+.omega {
+	margin-right: 0;
+}
+
+/* Grid >> 14 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container-14 .grid-1 {
+	width:58px;
+}
+
+.container-14 .grid-2 {
+	width:136px;
+}
+
+.container-14 .grid-3 {
+	width:214px;
+}
+
+.container-14 .grid-4 {
+	width:292px;
+}
+
+.container-14 .grid-5 {
+	width:370px;
+}
+
+.container-14 .grid-6 {
+	width:448px;
+}
+
+.container-14 .grid-7 {
+	width:526px;
+}
+
+.container-14 .grid-8 {
+	width:604px;
+}
+
+.container-14 .grid-9 {
+	width:682px;
+}
+
+.container-14 .grid-10 {
+	width:760px;
+}
+
+.container-14 .grid-11 {
+	width:838px;
+}
+
+.container-14 .grid-12 {
+	width:916px;
+}
+
+.container-14 .grid-13 {
+	width:994px;
+}
+
+.container-14 .grid-14 {
+	width:1072px;
+}
+
+
+
+
+/* Prefix Extra Space >> 14 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container-14 .prefix-1 {
+	padding-left:78px;
+}
+
+.container-14 .prefix-2 {
+	padding-left:156px;
+}
+
+.container-14 .prefix-3 {
+	padding-left:234px;
+}
+
+.container-14 .prefix-4 {
+	padding-left:312px;
+}
+
+.container-14 .prefix-5 {
+	padding-left:390px;
+}
+
+.container-14 .prefix-6 {
+	padding-left:468px;
+}
+
+.container-14 .prefix-7 {
+	padding-left:546px;
+}
+
+.container-14 .prefix-8 {
+	padding-left:624px;
+}
+
+.container-14 .prefix-9 {
+	padding-left:702px;
+}
+
+.container-14 .prefix-10 {
+	padding-left:780px;
+}
+
+.container-14 .prefix-11 {
+	padding-left:858px;
+}
+
+.container-14 .prefix-12 {
+	padding-left:936px;
+}
+
+.container-14 .prefix-13 {
+	padding-left:1014px;
+}
+
+
+
+/* Suffix Extra Space >> 14 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container-14 .suffix-1 {
+	padding-right:78px;
+}
+
+.container-14 .suffix-2 {
+	padding-right:156px;
+}
+
+.container-14 .suffix-3 {
+	padding-right:234px;
+}
+
+.container-14 .suffix-4 {
+	padding-right:312px;
+}
+
+.container-14 .suffix-5 {
+	padding-right:390px;
+}
+
+.container-14 .suffix-6 {
+	padding-right:468px;
+}
+
+.container-14 .suffix-7 {
+	padding-right:546px;
+}
+
+.container-14 .suffix-8 {
+	padding-right:624px;
+}
+
+.container-14 .suffix-9 {
+	padding-right:702px;
+}
+
+.container-14 .suffix-10 {
+	padding-right:780px;
+}
+
+.container-14 .suffix-11 {
+	padding-right:858px;
+}
+
+.container-14 .suffix-12 {
+	padding-right:936px;
+}
+
+.container-14 .suffix-13 {
+	padding-right:1014px;
+}
+
+
+
+/* Push Space >> 14 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container-14 .push-1 {
+	left:78px;
+}
+
+.container-14 .push-2 {
+	left:156px;
+}
+
+.container-14 .push-3 {
+	left:234px;
+}
+
+.container-14 .push-4 {
+	left:312px;
+}
+
+.container-14 .push-5 {
+	left:390px;
+}
+
+.container-14 .push-6 {
+	left:468px;
+}
+
+.container-14 .push-7 {
+	left:546px;
+}
+
+.container-14 .push-8 {
+	left:624px;
+}
+
+.container-14 .push-9 {
+	left:702px;
+}
+
+.container-14 .push-10 {
+	left:780px;
+}
+
+.container-14 .push-11 {
+	left:858px;
+}
+
+.container-14 .push-12 {
+	left:936px;
+}
+
+.container-14 .push-13 {
+	left:1014px;
+}
+
+
+
+/* Pull Space >> 14 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container-14 .pull-1 {
+	left:-78px;
+}
+
+.container-14 .pull-2 {
+	left:-156px;
+}
+
+.container-14 .pull-3 {
+	left:-234px;
+}
+
+.container-14 .pull-4 {
+	left:-312px;
+}
+
+.container-14 .pull-5 {
+	left:-390px;
+}
+
+.container-14 .pull-6 {
+	left:-468px;
+}
+
+.container-14 .pull-7 {
+	left:-546px;
+}
+
+.container-14 .pull-8 {
+	left:-624px;
+}
+
+.container-14 .pull-9 {
+	left:-702px;
+}
+
+.container-14 .pull-10 {
+	left:-780px;
+}
+
+.container-14 .pull-11 {
+	left:-858px;
+}
+
+.container-14 .pull-12 {
+	left:-936px;
+}
+
+.container-14 .pull-13 {
+	left:-1014px;
+}
+
+
+
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix {
+  zoom: 1;
+}

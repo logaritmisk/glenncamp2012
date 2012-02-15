@@ -1,0 +1,11 @@
+log/*
+!log/README.txt
+tmp/*
+!tmp/README.txt
+web/sites/*/backup
+web/sites/*/settings.php
+web/sites/*/files/*
+!web/sites/*/files/README.txt
+.DS_Store
+nbproject
+._*

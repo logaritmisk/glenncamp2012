@@ -1,0 +1,32 @@
+<?php
+/**
+ * Implements hook_form_alter().
+ */
+function drupalse_custom_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_register') {
+    $form['signup']['3']['#default_value'] = 1;
+    $form['signup']['#access'] = FALSE;
+    $form["Personal information"]["#weight"] = 0;
+    $form["Personal information"]['profile_interests']['#resizable'] = false;
+  }
+
+  if($form['#id'] == 'node-form') {
+    if (isset($form['buttons']['preview'])) {
+      unset($form['buttons']['preview']);
+    }
+  }
+}
+
+/**
+ * Implements of hook_custom_message_alter().
+ */
+function drupalse_custom_message_alter(&$messages) {
+  $matches = $messages->contains('A confirmation email will be sent shortly');
+  $messages->remove($matches);
+
+  $matches = $messages->contains('The image was resized to fit within');
+  $messages->remove($matches);
+
+  $matches = $messages->contains('Signup to');
+  $messages->remove($matches);
+}

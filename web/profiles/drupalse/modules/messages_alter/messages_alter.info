@@ -1,0 +1,10 @@
+; $Id: messages_alter.info,v 1.2 2010/07/08 03:15:06 bartonfreelance Exp $
+name = Messages Alter
+description = This module adds a custom hook_message_alter().
+core = 6.x
+; Information added by drupal.org packaging script on 2010-07-13
+version = "6.x-1.2"
+core = "6.x"
+project = "messages_alter"
+datestamp = "1278997509"
+

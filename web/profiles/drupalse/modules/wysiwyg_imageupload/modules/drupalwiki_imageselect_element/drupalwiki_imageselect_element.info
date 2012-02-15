@@ -1,0 +1,12 @@
+; $Id$
+name = Drupalwiki imageselect element
+description = Use this helper to make nice looking select boxes with images
+package=Drupal Wiki
+core = 6.x
+
+; Information added by drupal.org packaging script on 2011-06-02
+version = "6.x-3.0-rc2"
+core = "6.x"
+project = "wysiwyg_imageupload"
+datestamp = "1307015816"
+

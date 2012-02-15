@@ -1,0 +1,72 @@
+<?php
+// $Id$
+// Copyright (c) 2010 KontextWork GbR
+// Author: Eugen Mayer
+
+/**
+ * Thats where we actually alter the form and add our extra meta data
+ * The loaded $img_obj hold your data dui to the hook_wysiwyg_imageupload_entity_load_alter
+ * We use the value to set our default value
+ */
+function wysiwyg_imageupload_caption_form_alter(&$form, &$state, $form_id) {
+  if ( $form_id == 'wysiwyg_imageupload_edit_form') {
+    // You always find the IID here
+    $iid = $form['image_upload_details']['iid']['#value'];
+    $img_obj = _wysiwyg_imageupload_load_inline_entity($iid);
+
+   $defaults = array(
+    'filepath' => $img_obj->filepath,
+    'imagecache' => $img_obj->imagecache,
+    'alignment' => $img_obj->alignment,
+    'style' => $img_obj->style,
+    'title' => $img_obj->title,
+    'caption'=> $img_obj->caption,
+    );
+   $form['image_upload_details']['extras']['caption'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Caption'),
+    '#default_value' => $defaults['caption'],
+    '#size' => 50
+    );
+  }
+  elseif ($form_id == 'wysiwyg_imageupload_admin_settings') {
+ //   no admin setting for caption
+  }
+}
+
+/**
+ * Implementation of hook_wysiwyg_imageupload_entity_save().
+ */
+function wysiwyg_imageupload_caption_wysiwyg_imageupload_entity_save($post, $iid) {
+  // $post has the $form_state['values'], so we find our form element there (the value)
+  $update = array(
+    'iid',
+  );
+  $record = array(
+    'caption' => $post['caption'],
+    'iid' => $post['iid'],
+  );
+  drupal_write_record('wysiwyg_imageupload_entity', $record, $update);
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function wysiwyg_imageupload_caption_theme(){
+  return wysiwyg_imageupload_theme();
+}
+
+function wysiwyg_imageupload_caption_theme_registry_alter(&$theme_registry) 
+{
+  if (is_array($theme_registry['wysiwyg_imageupload_render_meta'])) {
+    $theme_registry['wysiwyg_imageupload_render_meta']['function']='theme_wysiwyg_imageupload_caption_wysiwyg_imageupload_render_meta';	
+  }
+}
+
+function theme_wysiwyg_imageupload_caption_wysiwyg_imageupload_render_meta($img_obj,$arguments){
+  $output = '';
+  if ($img_obj->caption != '') {
+    $output .= "<span class='image_title'>{$img_obj->caption}</span>";
+  }
+  return $output;
+}

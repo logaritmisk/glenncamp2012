@@ -1,0 +1,94 @@
+/**
+ * Typography for DrupalCamp Stockholm Fall 2011
+ */
+body {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height:150%;
+  color:#333;
+}
+
+.center {
+  text-align:center;
+}
+
+.eng-intro {
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 28px;
+  line-height: 117%;
+}
+
+.page-drupal-awards .addthis_toolbox {
+  margin:0 auto;
+  width:126px;
+}
+
+#boxes-box-drupalse_awards img {
+  width: 140px;
+}
+
+.pane-boxes-drupalse-awards h2.pane-title {
+  font-size:28px;
+}
+
+/**
+ * Headlines
+ */
+h1 {
+  font-size: 28px;
+  font-family: Helvetica,Arial,sans-serif;
+  font-weight:bold;
+  color:#323232;
+  line-height: 1.2em;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.3em;
+  margin: 8px 0;
+  color:#323232;
+}
+
+h3 {
+  color:#323232;
+  font-size: 20px bold;
+  line-height: 1.3em;
+  font-size:20px;
+}
+
+h1 a, h2 a, h3 a {
+  color:#323232;
+}
+
+/**
+ * Links
+ */
+ a {
+   color:#55A69E;
+   text-decoration: none;
+ }
+ 
+ p {
+   margin-bottom: 1em;
+ }
+
+ ul {
+    list-style: disc outside none;
+    margin: 1em 0;
+    padding-left: 1em;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+ol {
+  list-style: decimal outside none;
+  margin: 1em 0;
+  padding-left: 1em;
+}
+
+ol li {
+  margin: 5px 0;
+}

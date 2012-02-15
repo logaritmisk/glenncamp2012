@@ -1,0 +1,8 @@
+core = "6.x"
+dependencies[] = "features"
+description = "Hodls DrupalCamp roles"
+features[user_role][] = "ticket attendee"
+name = "DrupalCamp roles"
+package = "Features"
+project = "drupalse_roles"
+version = "6.x-1.0-beta1"

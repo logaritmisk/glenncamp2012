@@ -1,0 +1,6 @@
+name = DrupalCamp twitter pull
+description = Shows tweets
+dependencies[] = ctools
+dependencies[] = panels
+dependencies[] = page_manager
+core = 6.x

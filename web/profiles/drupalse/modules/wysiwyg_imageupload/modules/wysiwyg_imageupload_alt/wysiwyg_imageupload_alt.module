@@ -1,0 +1,82 @@
+<?php
+ 
+/**
+ * Implementation of hook_form_alter().
+ */
+ 
+function wysiwyg_imageupload_alt_form_alter(&$form, &$state, $form_id) {
+  if ( $form_id == 'wysiwyg_imageupload_edit_form') {
+    // You always find the IID here
+    $iid = $form['image_upload_details']['iid']['#value'];
+    $img_obj = _wysiwyg_imageupload_load_inline_entity($iid);
+
+    $default = variable_get('wysiwyg_imageupload_alt_default', NULL);
+    // only use the defaul if nothing set yet
+    if ($img_obj->alt) {
+      $now = $img_obj->alt;
+    }
+	else{$now = '';}
+
+    $form['image_upload_details']['extras']['alt'] = array(
+      '#title' => t('AltText'),
+      '#description' => t('Alt text for image'),
+      '#type' => 'textfield',
+      '#default_value' => $now,
+    );
+  }
+  elseif ($form_id == 'wysiwyg_imageupload_admin_settings') {
+    wysiwyg_imageupload_alt_admin_settings($form);
+  }
+}
+
+function wysiwyg_imageupload_alt_theme() {
+  return wysiwyg_imageupload_theme();
+}
+
+/**
+ * Implementation of hook_wysiwyg_imageupload_entity_save().
+ */
+function wysiwyg_imageupload_alt_wysiwyg_imageupload_entity_save($post, $iid) {
+  $update = array(
+    'iid',
+  );
+
+  $record = array(
+    'alt' => $post['alt'],
+    'iid' => $post['iid'],
+  );
+  drupal_write_record('wysiwyg_imageupload_entity', $record, $update);
+}
+
+/**
+ * We alter the wysiwyg_imageupload admin settings
+ * to provide some settings for our module.
+ */
+function wysiwyg_imageupload_alt_admin_settings(&$form) {
+
+  $form['wysiwyg_imageupload_alt_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Alt settings'),
+    '#description' => t('Default Alt text'),
+    '#collapsed' => TRUE,
+    '#collapsible' => TRUE,
+    '#weight' => 0,
+  );
+
+  $form['wysiwyg_imageupload_alt_settings']['wysiwyg_imageupload_alt_default'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Default Text for Alt text?'),
+    '#description' => t('Incase You not put any alt text this text will be used by default its set to empty'),
+    '#default_value' => variable_get('wysiwyg_imageupload_alt_default', NULL),
+  );
+}
+
+
+function wysiwyg_imageupload_alt_wysiwyg_imageupload_rendered_image_alter(&$img, $img_obj) {
+  $default = variable_get('wysiwyg_imageupload_alt_default', NULL);
+  // only use the defaul if nothing set yet
+  if (!$img_obj->alt) {
+    $img_obj->alt = $default;
+  }
+	$img = str_replace('alt='.'"'.$img_obj->iid.'"', 'alt='.'"'.$img_obj->alt.'"', $img);
+}

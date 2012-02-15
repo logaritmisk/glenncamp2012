@@ -1,0 +1,44 @@
+<?php
+// $Id$
+
+function wysiwyg_imageupload_alt_install() {
+  db_query("UPDATE {system} SET weight = 11 WHERE name = 'wysiwyg_imageupload_alt'");
+  wysiwyg_imageupload_alt_add_field();
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function wysiwyg_imageupload_alt_add_field() {
+  $ret = array();
+
+  $alt = array(
+    'type' => 'varchar',
+    'length' => 255,
+	'not null' => TRUE,
+	'default' => '',
+	'description' => 'Image ALT Text.',
+  );
+  db_add_field($ret, 'wysiwyg_imageupload_entity', 'alt', $alt);
+  return $ret;
+}
+
+function wysiwyg_imageupload_alt_schema_alter(&$schema) {
+  // Add field to existing schema.
+  $schema['wysiwyg_imageupload_entity']['fields']['alt'] = array(
+    'type' => 'varchar',
+    'length' => 255,
+	'not null' => TRUE,
+	'default' => '',
+	'description' => 'Image ALT Text.',
+  );
+}
+/**
+ * Implementation of hook_uninstall().
+ */
+function wysiwyg_imageupload_alt_uninstall() {
+  // Remove tables.
+  db_drop_field($ret, 'wysiwyg_imageupload_entity', 'alt');
+  // Remove variables.
+  db_query("DELETE FROM {variable} WHERE name LIKE 'wysiwyg_imageupload_alt_%'");
+}

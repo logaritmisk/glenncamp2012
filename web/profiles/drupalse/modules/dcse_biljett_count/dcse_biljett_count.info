@@ -1,0 +1,5 @@
+name = Biljett.com Ticket Count
+description = Shows the number of tickets currently available at biljett.com (10 minute delay).
+core = 6.x
+package = "DrupalCamp Stockholm"
+dependencies[] = querypath

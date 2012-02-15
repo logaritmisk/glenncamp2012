@@ -1,0 +1,47 @@
+<?php
+// $Id$
+
+function wysiwyg_imageupload_caption_install() {
+  wysiwyg_imageupload_caption_add_field();
+  wysiwyg_imageupload_caption_copy_title();
+}
+
+/**
+ * Copy in column caption the title column, so behaves like primary module
+ */
+function wysiwyg_imageupload_caption_copy_title() {
+   db_query("UPDATE {wysiwyg_imageupload_entity} SET caption = title");
+}
+/**
+ * Implementation of hook_schema().
+ */
+function wysiwyg_imageupload_caption_add_field() {
+  $ret = array();
+  $caption = array(
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => TRUE,
+    'default' => '',
+    'description' => 'Image caption.',
+  );
+  db_add_field($ret, 'wysiwyg_imageupload_entity', 'caption', $caption);
+  return $ret;
+}
+
+function wysiwyg_imageupload_caption_schema_alter(&$schema) {
+  // Add field to existing schema.
+  $schema['wysiwyg_imageupload_entity']['fields']['caption'] = array(
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => TRUE,
+    'default' => '',
+    'description' => 'Image caption.',
+  );
+}
+/**
+ * Implementation of hook_uninstall().
+ */
+function wysiwyg_imageupload_caption_uninstall() {
+  // Remove tables.
+  db_drop_field($ret, 'wysiwyg_imageupload_entity', 'caption');
+}

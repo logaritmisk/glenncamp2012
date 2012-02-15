@@ -1,0 +1,16 @@
+; $Id$
+name = WYSIWYG Image upload - Caption extension.
+description = The caption is independent from title. 
+dependencies[] = wysiwyg_imageupload
+package = Drupal Wiki
+core = "6.x"
+project = "wysiwyg_imageupload_caption"
+
+
+
+; Information added by drupal.org packaging script on 2011-06-02
+version = "6.x-3.0-rc2"
+core = "6.x"
+project = "wysiwyg_imageupload"
+datestamp = "1307015816"
+

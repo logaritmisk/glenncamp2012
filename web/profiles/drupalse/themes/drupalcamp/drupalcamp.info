@@ -1,0 +1,23 @@
+name = DrupalCamp
+description = DrupalCamp theme
+core = 6.x
+engine = phptemplate
+
+base = precision
+
+; Panel layouts
+plugins[panels][layouts] = plugins/layouts
+plugins[panels][styles] = plugins/styles
+api[panels][styles][version] = 2
+
+; Stylesheets
+stylesheets[all][] = css/reset.css
+stylesheets[all][] = css/grid.css
+stylesheets[all][] = css/typo.css
+stylesheets[all][] = css/styles.css
+
+; Stylesheet to use for grid debugging
+;stylesheets[all][] = css/regions.css
+
+scripts[] = scripts/infieldlabels/infieldlabels.min.js
+scripts[] = scripts/script.js

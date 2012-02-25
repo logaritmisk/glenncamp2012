@@ -5,8 +5,25 @@ cd web
 
 drush -y make ../project.make
 
+
+if pushd profiles/drupalse/modules; then
+  for f in *; do
+    [[ `readlink $f` =~ '../../cod/modules/contrib' ]] && rm $f
+  done
+
+  popd
+fi
+
 if pushd profiles/drupalse; then
   drush -y make --no-core --contrib-destination=. drupalse.make
+
+  popd
+fi
+
+if pushd profiles/drupalse/modules; then
+  for f in ../../cod/modules/contrib/*; do
+    [[ -d $f && ! -d `basename $f` ]] && ln -s $f .
+  done
 
   popd
 fi

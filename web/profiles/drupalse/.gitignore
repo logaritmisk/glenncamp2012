@@ -1,0 +1,6 @@
+/modules/*
+!/modules/cod_modules
+
+/themes/*
+!/themes/cod_themes
+!/themes/drupalcamp

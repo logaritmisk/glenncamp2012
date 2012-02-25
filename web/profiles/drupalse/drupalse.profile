@@ -1,4 +1,5 @@
 <?php
+
 /**
 * Return an array of the modules to be enabled when this profile is installed.
 *
@@ -73,7 +74,7 @@ function drupalse_profile_modules() {
     'skinr',
     'ctools',
     'panels',
-      
+
     // COD features are installed during a profile task.
   );
 }
@@ -163,10 +164,11 @@ function drupalse_profile_tasks(&$task, $url) {
   if ($task == 'drupalse-modules') {
     $modules = _drupalse_profile_modules();
     $files = module_rebuild_cache();
+
     // Create batch
     foreach ($modules as $module) {
       $batch['operations'][] = array('_install_module_batch', array($module, $files[$module]->info['name']));
-    }    
+    }
     $batch['finished'] = '_drupalse_profile_batch_finished'; // The finish op will set the next task.
     $batch['title'] = st('Installing @drupal', array('@drupal' => drupal_install_profile_name()));
     $batch['error_message'] = st('The installation has encountered an error.');
@@ -176,9 +178,11 @@ function drupalse_profile_tasks(&$task, $url) {
     variable_set('install_task', 'drupalse-modules-batch');
     batch_set($batch);
     batch_process($url, $url);
-    // Jut for cli installs. We'll never reach here on interactive installs.
+
+    // Just for cli installs. We'll never reach here on interactive installs.
     return;
   }
+
   // We are running a batch task for this profile so basically do nothing and return page
   if ($task == 'drupalse-modules-batch') {
     include_once 'includes/batch.inc';
@@ -194,12 +198,16 @@ function drupalse_profile_tasks(&$task, $url) {
 
     // Rebuild key tables/caches
     drupal_flush_all_caches();
+
     // Set acquia_prosper as the default theme.
     db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name ='%s'", 'fusion_core');
     db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name ='%s'", 'fusion_swimmingly');
+
     variable_set('theme_default', 'garland');
+
     // Set the default admin theme to bluemarine b/c it is good.
     variable_set('admin_theme', 'seven');
+
     // Revert features to be sure everything is setup correctly.
     // We revert cod_base last because it assigns permissions to roles defined
     // in the other COD Feature modules. See http://drupal.org/node/1210246
@@ -212,12 +220,13 @@ function drupalse_profile_tasks(&$task, $url) {
       'cod_sponsors' => array('variable'),
       'cod_base' => array('variable', 'user_permission'),
     );
-    features_revert($revert);
 
+    features_revert($revert);
 
     // Inform installation we are done.
     $task = 'profile-finished';
   }
+
   return $output;
 }
 
@@ -238,5 +247,5 @@ function _drupalse_profile_batch_finished($success, $results) {
 *   screen.
 */
 function drupalse_profile_final() {
-  
+
 }
